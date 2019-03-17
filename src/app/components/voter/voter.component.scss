@@ -1,0 +1,144 @@
+@import "../../../styles/settings.scss";
+
+.plug-voter {
+    text-align: center;
+    width: get-vw( 600px );
+    margin: auto;
+    padding-bottom: get-vw( 50px );
+
+    @media only screen and ( max-width: $size-desktop ) {
+        width: 100%;
+        padding-bottom: 50px;
+    }
+
+    table { position: relative; }
+    th, td {
+        padding: get-vw( $pad-normal );
+        text-align: left;
+
+        @media only screen and ( max-width: $size-desktop ) {
+            padding: $pad-normal;
+        }
+    }
+
+    // Table form row
+    .fieldset {
+        th, td {
+            padding: 0px 0px !important;
+        }
+    }
+    button {
+        display: block;
+        min-width: 100%;
+    }
+
+    // Table headers
+    th {
+        background-color: $col-primary-holder;
+        color: $col-text-white;
+        font-size: get-vw( 20px );
+        font-weight: 100;
+
+        @media only screen and ( max-width: $size-desktop ) {
+            font-size: 20px;
+        }
+
+        // First column
+        &:nth-child( 1 ) {
+            width: get-vw( 300px );
+            max-width: 80%;
+
+            @media only screen and ( max-width: $size-desktop ) {
+                width: 300px;
+            }
+        }
+
+        // Second column
+        &:nth-child( 2 ) {
+            width: get-vw( 100px );
+            max-width: 20%;
+
+            @media only screen and ( max-width: $size-desktop ) {
+                width: 100px;
+            }
+        }
+    }
+
+    // Table rows
+    td {
+        background-color: $col-secondary;
+        font-size: get-vw( 16px );
+        font-weight: 600;
+        position: relative;
+
+        @media only screen and ( max-width: $size-desktop ) {
+            font-size: 16px !important;
+        }
+
+        // Suggestion cell
+        &.suggestion {
+            white-space: nowrap; 
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100px;
+        }
+
+        // Button cell
+        &.button-t:hover, &.button-t:active {
+            transition: background-color 0.2s;
+            cursor: pointer;
+        }
+
+        &.button-t:hover {
+            background-color: $col-secondary-hover;
+        }
+
+        &.button-t:active {
+            background-color: $col-secondary-active;
+        }
+    }
+
+    .counter {
+        line-height: get-vw( 24px );
+        vertical-align: middle;
+
+        @media only screen and ( max-width: $size-desktop ) {
+            line-height: 24px !important;
+        }
+    }
+
+    // Like icon
+    .like {
+        text-align: center;
+    }
+    svg {
+        color: $col-text-dgrey;
+        vertical-align: middle;
+        width: get-vw( 24px );
+        transition: opacity 0.2s;
+
+        @media only screen and ( max-width: $size-desktop ) {
+            width: 24px !important;
+        }
+    }
+
+    // Info layout
+    .info-empty {
+        height: get-vw( 100px );
+        position: relative;
+        color: $col-text-dgrey;
+        font-size: get-vw( 16px );
+
+        @media only screen and ( max-width: $size-desktop ) {
+            height: 100px;
+            font-size: 16px !important;
+        }
+    }
+
+    // User voted
+    &.voted {
+        tr:not( .voted ) td.button-t { pointer-events: none; }
+        tr:not( .voted ) td svg { opacity: 0; }
+        
+    }
+}

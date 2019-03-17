@@ -1,0 +1,24 @@
+$size-desktop: 1200px;
+
+// Padding
+$pad-normal: 15px;
+$pad-large: 30px;
+
+// Colors
+$col-default: white;
+$col-text: #444;
+$col-text-white: #fff;
+$col-text-dgrey: #686868;
+$col-primary: #5C7EBD;
+$col-primary-hover: #7796CE;
+$col-primary-active: #5974A9;
+$col-primary-holder: #6F7084;
+$col-secondary: #F0F0F0;
+$col-secondary-hover: #CBD9F3;
+$col-secondary-active: #A8B7D6;
+$col-secondary-holder: #E7E7E7;
+
+@function get-vw( $target ) { 
+    $vw-context: ( 1200*.01 ) * 1.2px;
+    @return ( $target/$vw-context ) * 1vw;
+}

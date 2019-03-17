@@ -1,0 +1,17 @@
+@import "../../../styles/settings.scss";
+
+#header {
+    width: 100%;
+    background-color: $col-secondary;
+
+    .title {
+        display: inline-block;
+        box-sizing: border-box;
+        height: 100%;
+        padding: $pad-normal $pad-large;
+        font-size: 20px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+}
