@@ -8,7 +8,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "sbw-server": "concurrently \"nodemon server/_dist/main.js\" \"tsc -p ./server/tsconfig.json --watch\"",
-    "prebuild": "concurrently \"ng build\" \"npm run b-server\" ",
+    "local-build": "concurrently \"ng build\" \"npm run b-server\" ",
     "b-server": "tsc -p ./server/tsconfig.json",
     "postinstall": "ng build",
     "start": "node server/_dist/main.js"
