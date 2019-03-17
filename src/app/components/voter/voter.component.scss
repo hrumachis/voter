@@ -100,11 +100,12 @@
 
     .counter {
         float: left;
-        line-height: get-vw( 24px );
+        line-height: get-vw( 25px );
         vertical-align: middle;
+        margin-left: get-vw( 25px );
 
         @media only screen and ( max-width: $size-desktop ) {
-            line-height: 24px !important;
+            line-height: 25px !important;
         }
     }
 
