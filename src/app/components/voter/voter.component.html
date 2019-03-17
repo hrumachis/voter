@@ -1,9 +1,9 @@
 <div class="plug-voter" [ngClass]="{ 'voted' : userVoted }">
     <form #addForm="ngForm" (ngSubmit)="submit()">
-        <table style="width:100%">
+        <table>
             <tr>
                 <th>Suggestion</th>
-                <th>Likes</th> 
+                <th>Likes</th>
             </tr>
 
             <tr *ngIf="suggestions.length <= 0" class="info-empty">

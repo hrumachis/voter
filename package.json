@@ -3,13 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "sbw-server": "concurrently \"nodemon server/_dist/main.js\" \"tsc -p ./server/tsconfig.json --watch\"",
-    "build": "concurrently \"ng build\" \"npm run b-server\" ",
+    "prebuild": "concurrently \"ng build\" \"npm run b-server\" ",
     "b-server": "tsc -p ./server/tsconfig.json",
-    "postinstall": "npm run build",
+    "postinstall": "npm run prebuild",
     "start": "node server/_dist/main.js"
   },
   "private": true,
