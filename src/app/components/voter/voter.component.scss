@@ -38,6 +38,9 @@
         color: $col-text-white;
         font-size: get-vw( 20px );
         font-weight: 100;
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis;
 
         @media only screen and ( max-width: $size-desktop ) {
             font-size: 20px;
@@ -46,20 +49,18 @@
         // First column
         &:nth-child( 1 ) {
             width: get-vw( 300px );
-            max-width: 80%;
 
             @media only screen and ( max-width: $size-desktop ) {
-                width: 300px;
+                max-width: 300px;
             }
         }
 
         // Second column
         &:nth-child( 2 ) {
             width: get-vw( 100px );
-            max-width: 20%;
 
             @media only screen and ( max-width: $size-desktop ) {
-                width: 100px;
+                max-width: 100px;
             }
         }
     }
