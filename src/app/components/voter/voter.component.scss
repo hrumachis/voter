@@ -11,7 +11,7 @@
         padding-bottom: 50px;
     }
 
-    table { position: relative; width: 100%; }
+    table { position: relative; width: 100%; table-layout: fixed; }
     th, td {
         padding: get-vw( $pad-normal );
         text-align: left;
@@ -70,6 +70,7 @@
         font-size: get-vw( 16px );
         font-weight: 600;
         position: relative;
+        display: table-cell;
 
         @media only screen and ( max-width: $size-desktop ) {
             font-size: 16px !important;
@@ -77,9 +78,7 @@
 
         // Suggestion cell
         &.suggestion {
-            white-space: nowrap; 
-            overflow: hidden;
-            text-overflow: ellipsis;
+            word-break: break-all;
             max-width: 100px;
         }
 
@@ -99,6 +98,7 @@
     }
 
     .counter {
+        float: left;
         line-height: get-vw( 24px );
         vertical-align: middle;
 

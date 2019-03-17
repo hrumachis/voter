@@ -5,14 +5,16 @@
                 <th>Suggestion</th>
                 <th>Likes</th>
             </tr>
-
+            
+            <!-- List empty message -->
             <tr *ngIf="suggestions.length <= 0" class="info-empty">
                 <div class="pos-cover ">
                     <div class="pos-center">List is empty</div>
                 </div>
             </tr>
-            <tr *ngFor="let sg of suggestions; let i = index" [ngClass]="{ 'voted' : userVotedTarget == i }">
-                <td class="suggestion">{{ sg.text }}</td>
+            <!-- Listing suggestions -->
+            <tr *ngFor="let sg of suggestions; let i = index" [ngClass]="{ 'voted' : userVotedTarget == i }" class="anima-fade-in">
+                <td class="suggestion" [attr.title]="sg.text">{{ sg.text }}</td>
                 <td (click)="vote( i )" class="grid button-t">
                     <div class="counter">{{ sg.counter }}</div>
                     <div class="like vw-expand">
@@ -23,6 +25,7 @@
                 </td> 
             </tr>
             
+            <!-- Form field -->
             <tr class="fieldset">
                 <td>
                     <input (input)="onKeydown( $event.target.value )" class="pos-cover" name="suggestion" type="text" placeholder="Add new suggestion" [attr.maxlength]="maxLength" [attr.linlength]="minLength" [(ngModel)]="formAddValue">
