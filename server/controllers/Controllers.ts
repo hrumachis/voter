@@ -25,7 +25,7 @@ export default class Controllers {
         return function ( req: Express.Request, res: Express.Response, next: Express.NextFunction ) {
             var locale: Array< string > = req.url.split( "/" );
             var url: string;
-            console.log( locale )
+            
             if ( locale[ 1 ] == "js" || locale[ 1 ] == "css" || locale[ 1 ] == "img") {
                 url = `${ CONST.__DISTNAME }/${ locale[ 1 ]}/${ locale[ 2 ] }`;
             } else {
